@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock title %}
+{% block activerr %}active{% endblock activerr %}
+
+{% block body %}
+<div class="container my-3">
+    <h2>Please Write Your Details For Sign-Up</h2>
+    <form action="/registerpage" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">UserName</label>
+            <input type="username" class="form-control" id="username"  name='username' aria-describedby="username">
+          </div>
+        <div class="form-group">
+          <label for="first_name">First Name</label>
+          <input type="first_name" class="form-control" id="first_name" name="first_name">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="lastname" class="form-control" id="lastname" name="lastname">
+        </div>
+        <div class="form-group">
+            <label for="emailadd">Email address</label>
+            <input type="emailadd" class="form-control" id="emailadd" name='emailadd' aria-describedby="emailadd">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="con_password">Confirm Password</label>
+            <input type="con_password" class="form-control" id="con_password" name="con_password">
+        </div>
+        <button type="submit" class="btn btn-outline-success outline btn-sm">Submit</button>
+      </form>
+</div>
+{% endblock body %}

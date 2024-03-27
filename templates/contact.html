@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+{% block activec %}active{% endblock activec %}
+
+{% block body %}
+{% comment %} name, email, subject, phone_num and message {% endcomment %}
+
+<div class="container my-3">
+    <h2>Please Write Your Details</h2>
+    <form action="/contact" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="user" class="form-control" id="name"  name='name' aria-describedby="name">
+          </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" name='email' aria-describedby="email">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="subject" class="form-control" id="subject" name="subject">
+        </div>
+        <div class="form-group">
+            <label for="phone_num">Phone Number</label>
+            <input type="phone_num" class="form-control" id="phone_num" name="phone_num">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea type="phone_num" class="form-control" id="message" name="message"></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+{% endblock body %}

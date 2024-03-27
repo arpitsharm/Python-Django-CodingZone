@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock title %}
+{% block activea %}active{% endblock activea %}
+{% block css_style %}
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+
+    h1 {
+        color: #007bff;
+    }
+
+    h1 :hover {
+        color: darkblue;
+    }
+    h3 {
+        color: #052a51;
+    }
+</style>
+{% endblock css_style %}
+
+{% block body %}
+<div class="container my-3">
+    <h1 class="text-center"><a href="#">About Us</a></h1>
+    <div class="first float-left">
+        <h3>Learn Work</h3>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text">This Blog Main Work is blog create and read you will be watch any blog and create good and fast growing blog...</p>
+              <a href="/blog/" class="card-link">Go to Blog</a>
+              <a href="/blog/create_post" class="card-link">Create Blog</a>
+            </div>
+          </div>
+    </div>
+    <div class="first float-right">
+        <h3>Another Platform</h3>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-text">Yes, I sure is another platform youtube is a biggest platform and Here is my channel name Arpit Tutorial - CodeWithArpit Pro and this channel give us you best knowledge...</p>
+              <a href="https://www.youtube.com/@ArpitTutorials-CodeWithArpit" class="card-link">Go To Channel</a>
+            </div>
+          </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+{% endblock body %}

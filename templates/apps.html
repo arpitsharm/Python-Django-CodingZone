@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Apps{% endblock title %}
+{% block body %}
+<div class="container my-3">
+    <a href="/use_apps" class="btn btn-outline-primary btn-lg">Using Apps</a>
+    {% if user.is_authenticated %}
+    <a href="/create_apps" class="btn btn-outline-success btn-lg">Create Apps</a>
+    {% endif %}
+</div>
+{% endblock body %}

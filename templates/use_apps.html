@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Use Apps{% endblock title %}
+{% block body %}
+<div class="container my-3">
+    <center><h1 class="text-danger">All Application</h1></center>
+    <div class="all_apps">
+        {% for app in apps %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{app.image}}" class="card-img-top card" alt="Error">
+            <div class="card-body">
+              <h5 class="card-title">{{app.name}}</h5>
+              <a href="/{{app.file}}" class="btn btn-primary">Go App</a>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

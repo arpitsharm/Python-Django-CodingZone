@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Hello App{% endblock title %}
+{% block body %}
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+    
+    h1 {
+        color: #007bff;
+    }
+</style>
+<div class="container">
+    <center>
+        <h1>Hello App</h1>
+    </center>
+    <label>Enter Your Name :- </label>
+    <!-- create a entry box -->
+    <input type="text" name="name" id="name">
+    <br>
+    <label>Enter Your Age :- </label>
+    <!-- create a entry box -->
+    <input type="text" name="age" id="age">
+    <br>
+    <label>Enter Your Email :- </label>
+    <!-- create a entry box -->
+    <input type="text" name="email" id="email">
+    <br>
+    <label>Enter Your Password :- </label>
+    <!-- create a entry box -->
+    <input type="text" name="password" id="password">
+    <br>
+    <input type="submit" value="Submit" onclick="alert('Hello')">
+
+</div>
+{% endblock body %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock title %}
+{% block activeb %}active{% endblock activeb %}
+
+{% block body %}
+{% block javascript %}
+<script>
+    let previews=document.getElementsByClassName('preview');
+    Array.from(previews).forEach((element) => {
+        element.innerHTML=element.innerText;
+    });
+  </script>
+  {% endblock javascript %}
+
+{% if user.is_authenticated %}
+<div class="container my-3">
+  <h2>Coding Articles By CodingZone ({{allPost.count}}) :- </h2>
+  <form action="/blog/search_post" method="POST">
+    {% csrf_token %}
+  <div>
+    <div class="flex-container">
+      <label class="required" for="category">Category:</label>
+
+      <select name="category" id="category" class="form-control form-control-lg my-2">
+        <option value="">Choose</option>
+        <option value="tech">TECH</option>
+        <option value="food">FOOD</option>
+        <option value="kind">KIND</option>
+        <option value="education">EDUCATION</option>
+        <option value="sports">SPORTS</option>
+        <option value="travel">TRAVEL</option>
+        <option value="health">HEALTH</option>
+        <option value="other">OTHER</option>
+      </select>
+      <button class="btn btn-dark">Search</button>
+    </div>
+  </div>
+</form>
+  {% for post in allPost %}
+  <div
+    class="row no-gutters overflow-hidden flex-md-row mb-4 h-md-250 position-relative"
+  >
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary"
+        >Article By {{post.author}} ({{post.views}} Views)</strong
+      >
+      <h3 class="mb-0"><a href="/blog/{{post.slug}}" class="text-dark">{{ post.title }}</a></h3>
+      <div class="mb-1 text-muted">{{post.timeStamp}}</div>
+      <div class="mb-2 text-success">
+        <strong>Category: {{post.category}}</strong>
+      </div>
+      <p class="card-text mb-auto">{{post.content|truncatechars:250}}</p>
+      <div class="my-4">
+        <a href="/blog/{{post.slug}}" role="button" class="btn btn-outline-primary btn-sm"
+          >Read More...</a
+        >
+      </div>
+    </div>
+  </div>  
+
+  {% endfor %} {% else %}
+  <h1>Sorry</h1>
+  {% endif %}
+  
+</div>
+{% endblock body %}
